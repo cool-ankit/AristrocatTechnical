@@ -1,0 +1,17 @@
+.ng-dirty{
+    input.ng-invalid{border:1px solid red;}
+    select.ng-invalid{border:1px solid red;}
+    p-calendar.ng-invalid > input.p-inputtext{border:1px solid red;}
+}
+
+.premium{
+    div{
+        width: 100%;
+        margin:10px;
+    }
+    label{
+        width: 30%;
+        float: left;
+    }
+    span{color: red;}
+}

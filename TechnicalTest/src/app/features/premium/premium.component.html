@@ -1,0 +1,54 @@
+<div [formGroup]="formGroup" class="premium">
+
+    <div>* Required Information</div>
+
+    <div>
+        <label>
+            Name <span>*</span>
+        </label>
+        <div><input type="text" formControlName="name" required></div>
+
+    </div>
+    <div>
+        <label>
+            Age<span>*</span>
+        </label>
+        <div><input type="number" formControlName="age" required></div>
+
+    </div>
+    <div>
+        <label>
+            Date of Birth<span>*</span>
+        </label>
+        <div>
+            <p-calendar formControlName="dateOfBirth"></p-calendar>
+        </div>
+
+    </div>
+
+    <div>
+        <label>
+            Death – Sum Insured. <span>*</span>
+        </label>
+        <div><input type="number" formControlName="sumAssured" required></div>
+
+    </div>
+    <div>
+        <label>
+            Occupation<span>*</span>
+        </label>
+        <div>
+            <select (change)="onChange($event)" formControlName="occupation">
+                <option>select</option>
+                <option *ngFor="let occ of getOccuaptionList" value="{{occ.rating}}">
+                    {{occ.name}}
+                </option>
+            </select>
+        </div>
+
+    </div>
+
+    <div>Premium - <b>{{premiumValue}}</b></div>
+    <div><input type="button" value="Calculate Premium" (click)="onClick()"> </div>
+
+</div>
